@@ -1,0 +1,74 @@
+<h1 fxLayout="row" fxLayoutAlign="center center" class="animate__animated animate__fadeInUp"> Nuevo Destinatario</h1> <br> <br>
+
+<div  fxLayout="row" fxLayoutAlign="center center" class="animate__animated animate__fadeInUp">
+
+    <form class="example-form" (ngSubmit)="crearDestinatario(formNuevoDestinatario)" autocomplete="off" #formNuevoDestinatario="ngForm">
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>RUT</mat-label>
+                    <input matInput placeholder="Ingrese un RUT Valido" maxlength="12" name="rut" [(ngModel)]="nuevoDestinatario.rut" (input)="teclaPresionada()" required>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput placeholder="Nombre" name="nombre" [(ngModel)]="nuevoDestinatario.nombre" required>
+                </mat-form-field>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Correo</mat-label>
+                        <input matInput placeholder="Correo" type="email" name="correo" [(ngModel)]="nuevoDestinatario.correo" required>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Telefono</mat-label>
+                        <input matInput placeholder="Telefono" name="telefono" type="number" [(ngModel)]="nuevoDestinatario.telefono" required>
+                    </mat-form-field>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Banco</mat-label>
+                        <mat-select (valueChange)="bancoSelection($event)" #matSelectBanco required>
+                            <mat-option *ngFor="let banco of listadoBancos" [value]="banco.value">
+                              {{banco.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Tipo de Cuenta</mat-label>
+                        <mat-select (valueChange)="cuentaSelection($event)" #matSelectCuenta required>
+                            <mat-option *ngFor="let cuenta of tipoCuentas" [value]="cuenta.value">
+                              {{cuenta.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>N° de Cuenta</mat-label>
+                        <input matInput placeholder="N° de Cuenta" name="numeroCuenta" type="number" [(ngModel)]="nuevoDestinatario.numeroCuenta" required>
+                    </mat-form-field>
+                </td>
+                </tr>
+                
+        </table>
+
+        <button mat-raised-button color="accent" type="submit">Crear Destinatario</button>
+    
+    </form>
+
+</div>
+

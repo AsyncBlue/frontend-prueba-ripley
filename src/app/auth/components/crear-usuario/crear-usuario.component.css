@@ -1,0 +1,31 @@
+.example-card {
+    max-width: 500px;
+    height: 350px;
+  }
+  
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .buttonIniciarSesion {
+    width: 100%;
+  }
+  
+  .buttonCrearUsuario {
+    width: 100%;
+    margin-top: 25px;
+  }
+  
+  .tituloLogin {
+    color: darkblue;
+    font-size: 25px;
+    margin-left: 175px;
+  }
+  

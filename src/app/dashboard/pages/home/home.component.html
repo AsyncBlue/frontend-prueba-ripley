@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-evenly center">
+    
+    <span> Mi Banco</span>
+
+    <button mat-button routerLink="nuevo-destinatario"> <mat-icon>person_add</mat-icon> Agregar Destinatario</button>
+
+    <button mat-button routerLink="transferir"> <mat-icon>monetization_on</mat-icon> Transferir</button>
+
+    <button mat-button routerLink="historial"> <mat-icon>format_line_spacing</mat-icon> Historial</button>
+
+    <button mat-button (click)="cerrarSesion()">
+      <mat-icon>logout</mat-icon> Cerrar Sesión  
+    </button>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

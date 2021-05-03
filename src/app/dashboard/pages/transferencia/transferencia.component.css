@@ -1,0 +1,29 @@
+h1 {
+    padding-top: 20px;
+}
+
+.colorCard {
+    background-color: lightblue;
+    width: auto;
+    height: auto;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: 200px;
+}
+  
+.example-full-width {
+  width: 100%;
+}
+
+button {
+    width: 100%;
+}
+
+input {
+    height: 35px;
+    font-size: 35px;
+}

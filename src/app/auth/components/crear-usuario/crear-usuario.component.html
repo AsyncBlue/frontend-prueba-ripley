@@ -1,0 +1,35 @@
+<mat-card class="example-card animate__animated animate__fadeIn">
+
+    <mat-card-header>
+      <mat-card-title> <strong class="tituloLogin">Mi Banco</strong> </mat-card-title>
+    </mat-card-header>
+    
+    <br>
+        
+    <mat-card-content>
+    
+      <form class="example-form" (ngSubmit)="crearUsuario(formNuevoUsuario)" autocomplete="off" #formNuevoUsuario="ngForm">
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre" name="nombre" [(ngModel)]="datosUsuario.nombre" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>RUT</mat-label>
+            <input matInput placeholder="Ingrese un RUT Valido" maxlength="12" name="rut" [(ngModel)]="datosUsuario.rut" (input)="teclaPresionada()" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Contraseña" type="password" name="password" [(ngModel)]="datosUsuario.password" required>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" type="submit" class="buttonCrearUsuario">Crear Destinatario</button>
+    
+      </form>
+  
+          
+    </mat-card-content>
+    
+</mat-card>

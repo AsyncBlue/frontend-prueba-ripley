@@ -1,0 +1,48 @@
+<h1 fxLayout="row" fxLayoutAlign="center center" class="animate__animated animate__fadeInUp"> Historial de Transferencias</h1> <br> <br>
+
+
+<div  fxLayout="row" fxLayoutAlign="center center" class="animate__animated animate__fadeInUp" *ngIf="ELEMENT_DATA.length > 0">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="Nombre Destinatario">
+        <th mat-header-cell *matHeaderCellDef> <p>Nombre Destinatario</p> </th>
+        <td mat-cell *matCellDef="let element"> {{element.destinatario.nombre | titlecase }} </td>
+      </ng-container>
+    
+      <!-- Correo Column -->
+      <ng-container matColumnDef="RUT">
+        <th mat-header-cell *matHeaderCellDef> <p>RUT</p> </th>
+        <td mat-cell *matCellDef="let element"> {{element.destinatario.rut}} </td>
+      </ng-container>
+    
+      <!-- Banco Column -->
+      <ng-container matColumnDef="Banco">
+        <th mat-header-cell *matHeaderCellDef> <p>Banco</p> </th>
+        <td mat-cell *matCellDef="let element"> {{element.destinatario.banco}} </td>
+      </ng-container>
+
+      <!-- Tipo de Cuenta Column -->
+      <ng-container matColumnDef="Tipo de Cuenta">
+          <th mat-header-cell *matHeaderCellDef> <p>Tipo de Cuenta</p> </th>
+          <td mat-cell *matCellDef="let element"> {{element.destinatario.cuenta}} </td>
+      </ng-container>
+
+      <!-- Boton Transferir Column -->
+      <ng-container matColumnDef="Monto">
+          <th mat-header-cell *matHeaderCellDef> <p>Monto</p> </th>
+          <td mat-cell *matCellDef="let element"> {{ element.monto | number:'1.0' }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Comentario">
+        <th mat-header-cell *matHeaderCellDef> <p>Comentario</p> </th>
+        <td mat-cell *matCellDef="let element"> {{ element.comentario }} </td>
+      </ng-container> 
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+</div>

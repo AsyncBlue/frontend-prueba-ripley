@@ -1,0 +1,36 @@
+<h1 fxLayout="row" fxLayoutAlign="center center" class="animate__animated animate__fadeInUp"> Transferencia</h1> <br> <br>
+
+<div  fxLayout="row" fxLayoutAlign="center center" class="animate__animated animate__fadeInUp">
+
+    <mat-card class="colorCard">
+
+        <mat-list role="list">
+            <mat-list-item role="listitem"> <strong> {{ this.destinatario.nombre | titlecase }} </strong> </mat-list-item>
+            <mat-list-item role="listitem"> <strong> {{ this.destinatario.rut }} </strong> </mat-list-item>
+            <mat-list-item role="listitem"> <strong> {{ this.destinatario.correo }} </strong> </mat-list-item>
+            <mat-list-item role="listitem"> <strong> {{ this.destinatario.banco }} </strong> </mat-list-item>
+            <mat-list-item role="listitem"> <strong> {{ this.destinatario.cuenta }} </strong>  </mat-list-item>
+            <mat-list-item role="listitem"> <strong> {{ this.destinatario.numeroCuenta }} </strong> </mat-list-item>
+        </mat-list>
+
+    </mat-card>
+
+    <form class="example-form" autocomplete="off" (ngSubmit)="transferir()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Monto</mat-label>
+          <input matInput type="number" name="monto" [(ngModel)]="transferencia.monto">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Comentario</mat-label>
+            <textarea matInput type="text" name="comentario" [(ngModel)]="transferencia.comentario"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" type="submit">Transferir</button>
+
+    </form>
+
+    
+
+</div>
